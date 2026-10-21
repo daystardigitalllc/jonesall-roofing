@@ -56,7 +56,7 @@ aside .side{border-radius:14px;width:100%;aspect-ratio:4/3;object-fit:cover;marg
 .maplist li{position:relative}
 .maplist li span{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:.8rem;color:var(--muted);font-weight:500}
 .maplist a:hover,.maplist a.hl{border-color:var(--blue);background:var(--blue-l);color:var(--blue-d)}
-footer .fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px;padding-bottom:26px}
+footer .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr .8fr;gap:30px;padding-bottom:26px}
 .fgrid b{display:block;color:#fff;margin-bottom:8px;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;text-transform:uppercase;letter-spacing:.06em}
 .fgrid a{display:block;padding:2px 0}
 .fgrid p{margin-bottom:10px}
@@ -85,7 +85,7 @@ footer a:hover{text-decoration:underline}
 @media(max-width:900px){header.site .wrap{height:84px}.brand img{height:70px}.hero{min-height:calc(100vh - 84px);min-height:calc(100svh - 84px)}}
 
 .nav-phone{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;text-decoration:none;color:var(--ink);letter-spacing:.02em}
-@media(max-width:1100px){.nav-phone{display:none}}
+@media(max-width:1280px){.nav-phone{display:none}}
 @media(max-width:900px){nav.main .nav-phone{display:none!important}}
 
 /* ---- home: transparent header + first screen ---- */
@@ -120,3 +120,4 @@ body.home header.site:not(.solid) .burger span{background:#fff}
   nav.main a:not(.nav-cta),.dd-btn{color:var(--ink)!important;text-shadow:none!important}
 }
 @media(max-width:900px){body.home:not(.scrolled) .mobile-call{display:none}body.home:not(.scrolled) footer{padding-bottom:34px}}
+@media(min-width:901px) and (max-width:1120px){nav.main{gap:14px}nav.main a,.dd-btn{font-size:.92rem}.nav-cta{padding:9px 14px}}

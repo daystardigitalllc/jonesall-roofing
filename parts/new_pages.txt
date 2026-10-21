@@ -1,0 +1,63 @@
+# ---- about / faq / contact
+GENERAL_FAQS = [
+ ("Do you offer free roofing estimates?", "Yes. Call (615) 485-0213 or send a request through our contact form and we will schedule a time to look at your roof, then give you a clear written quote with no pressure."),
+ ("What areas do you serve?", "We are based in Mt. Juliet and serve Wilson County plus the seven counties that touch it: Davidson, Rutherford, Sumner, Smith, Trousdale, DeKalb and Cannon."),
+ ("How long does a roof replacement take?", "Most homes are finished in a single day, weather permitting. Larger or more complex roofs can take longer, and we will tell you up front."),
+ ("Will you clean up after the job?", "Yes. Customers consistently mention that we leave no debris behind. We haul away the old roofing and sweep the yard before we leave."),
+ ("How do I know if I need a repair or a full replacement?", "If damage is limited and the rest of the roof is in good shape, a repair may be all you need. If the roof is old, worn out or failing in several places, replacement is usually the smarter investment. We will give you an honest recommendation either way."),
+ ("Do I have to pay up front?", "Customers tell us they paid only once they were completely satisfied with the finished roof. Ask us about payment terms when you request your quote so everything is in writing."),
+ ("Will you try to upsell me on extras?", "No. Our quotes are straight and the price you are quoted is the price you pay, with no hidden fees and no pressure to add extras you do not need."),
+ ("Can you install gutters with my new roof?", "Yes. Many customers have new gutters and downspouts installed together with their roof so the whole exterior is done at once."),
+ ("Can you help with an insurance claim?", "We can provide the documentation and details you need for a claim. Call us to talk through your situation."),
+ ("Do you do work other than roofing?", "Yes. Jonesall Inc. Roofing & Construction also handles additions, remodels and exterior construction. Roofing is our main focus."),
+ ("Are you local?", "Yes. We are based at 2001 Lynnhaven Ct in Mt. Juliet, Tennessee, and have deep ties to the community."),
+]
+
+def simple_page(slug, title, desc, h1, lead, eyebrow, inner, extra_schema=None):
+    R = "../"
+    body = crumbs(R, [(eyebrow, None)]) + phero(h1, lead, "ranch-roof.jpg", R, eyebrow) + inner
+    pages[f"{slug}/index.html"] = page(R, f"{slug}/", title, desc, body, [BUSINESS] + (extra_schema or []))
+
+R_ = "../"
+about = f"""<section><div class="wrap two">
+  <div class="prose">
+    <div class="blk"><h2>Roofing done with real craftsmanship</h2>
+    <p>Jonesall Inc. Roofing &amp; Construction is a locally owned roofing contractor based in Mt. Juliet, Tennessee. We hold ourselves to the highest level of roofing craftsmanship, and the only trace we leave behind is an elegant-looking home.</p>
+    <p>Our customers say it best: a crew that is cordial and professional, a price with no hidden fees, a roof finished in one day, and a clean yard when we are done. Charles, who customers deal with directly, is known for responding quickly, explaining everything clearly and making sure you are completely satisfied.</p></div>
+    <div class="blk"><h2>What we do</h2><ul class="tick">
+      <li><a href="{R_}services/roof-replacement/">Roof replacement</a> with a full tear-off and clean install</li>
+      <li><a href="{R_}services/roof-repair/">Roof repair and leak repair</a> that fixes the real cause</li>
+      <li><a href="{R_}services/gutters/">Gutters and downspouts</a> installed with your roof</li>
+      <li><a href="{R_}services/construction/">Construction</a>, including additions and remodels</li></ul></div>
+    <div class="blk"><h2>Where we work</h2>
+    <p>We serve Wilson County and every county that touches it. See the <a href="{R_}service-areas/">full list of service areas</a>.</p></div>
+    <div class="blk"><h2>Trusted and reviewed</h2>
+    <p>We hold a 5.0 rating on 94 Google reviews and are listed in Owens Corning's contractor directory. You can <a href="{OC}" target="_blank" rel="noopener">view our Owens Corning contractor profile</a> or follow us on <a href="{FB}" target="_blank" rel="noopener">Facebook</a>.</p></div>
+  </div>
+  <aside><img class="side" src="{R_}images/hero-home.jpg" alt="Stone and brick home with a new roof installed by Jonesall Inc." loading="lazy">
+  <div class="callbox"><b>Talk to Jonesall</b><p>Free estimate, clear written quote, no pressure.</p><a class="btn btn-blue" href="#contact">Request a quote</a><a class="tel" href="tel:{PHONE_RAW}">{PHONE}</a></div></aside>
+</div></section>
+<section class="reviews"><div class="wrap"><div class="head"><div class="eyebrow">What neighbors say</div><h2>5.0 stars on 94 Google reviews</h2></div>{review_cards()}</div></section>"""
+simple_page("about", "About Jonesall Inc. | Mt. Juliet Roofing Contractor",
+  "Meet Jonesall Inc. Roofing & Construction, a locally owned Mt. Juliet, TN roofing contractor with 5.0 stars on 94 Google reviews.",
+  "About Jonesall Inc. Roofing & Construction", "A locally owned Mt. Juliet roofing contractor that treats your home like our own.", "About Us", about)
+
+faq_html = "".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in GENERAL_FAQS)
+faq_inner = f"""<section><div class="wrap narrow"><div class="faq">{faq_html}</div>
+<p style="margin-top:30px">Still have a question? <a href="{R_}contact/">Contact us</a> or call <a href="tel:{PHONE_RAW}">{PHONE}</a>.</p></div></section>
+<section class="areas-home"><div class="wrap"><div class="head"><div class="eyebrow">Services</div><h2>Learn more about what we do</h2></div>{service_cards(R_)}</div></section>"""
+simple_page("faq", "Roofing FAQ | Jonesall Inc. Mt. Juliet, TN",
+  "Answers to common roofing questions in Mt. Juliet and Middle Tennessee: estimates, timelines, repair vs replacement, gutters and more from Jonesall Inc.",
+  "Roofing questions, answered", "Straight answers about estimates, timelines, repairs and replacements from your Mt. Juliet roofer.", "FAQ", faq_inner,
+  [{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in GENERAL_FAQS]}])
+
+contact_inner = f"""<section><div class="wrap"><div class="services">
+  <a class="card" href="tel:{PHONE_RAW}"><h3>Call us</h3><p>{PHONE}</p><span class="more">Tap to call →</span></a>
+  <a class="card" href="mailto:{EMAIL}"><h3>Email us</h3><p>{EMAIL}</p><span class="more">Send an email →</span></a>
+  <div class="card"><h3>Visit us</h3><p>Jonesall Inc. Roofing &amp; Construction<br>2001 Lynnhaven Ct<br>Mt. Juliet, TN 37122</p></div>
+</div>
+<div class="head" style="margin-top:56px"><div class="eyebrow">Service areas</div><h2>Serving Wilson County and neighbors</h2></div>{county_map(R_)}</div></section>"""
+simple_page("contact", "Contact Jonesall Inc. | Mt. Juliet Roofing Contractor",
+  "Contact Jonesall Inc. Roofing & Construction in Mt. Juliet, TN. Call (615) 485-0213 or request a free roofing estimate online.",
+  "Contact Jonesall Inc.", "Request a free estimate or call us. We will get back to you with a clear, written quote.", "Contact", contact_inner,
+  [{"@context": "https://schema.org", "@type": "ContactPage", "name": "Contact Jonesall Inc."}])
