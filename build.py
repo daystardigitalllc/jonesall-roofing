@@ -8,6 +8,7 @@ BASE = "https://www.roofingmountjuliet.com"
 PHONE, PHONE_RAW, EMAIL = "(615) 485-0213", "+16154850213", "jonesall@tds.net"
 OC = "https://www.owenscorning.com/en-us/roofing/contractors/contractor-profile/219346"
 FB = "https://www.facebook.com/jonesallinc/"
+BBB = "https://www.bbb.org/us/tn/mount-juliet/profile/roofing-contractors/jonesall-roofing-construction-0573-37114048"
 
 # ---------------------------------------------------------------- content
 SERVICES = [
@@ -35,7 +36,7 @@ SERVICES = [
    ("Common repairs we handle", ["Missing, cracked or lifted shingles.",
      "Leaks around chimneys, vents, skylights and valleys.",
      "Damaged or failed flashing.",
-     "Storm and wind damage.",
+     "Hail and storm damage.", "Wind damage.",
      "Sagging or soft decking."]),
    ("Our approach", ["Inspect the whole roof system, not just the spot where the stain shows.",
      "Explain what we found in plain English, with photos when possible.",
@@ -50,6 +51,7 @@ SERVICES = [
   blocks=[
    ("Why gutters matter", ["Direct water away from your foundation and landscaping.",
      "Protect fascia and siding from water damage.",
+     "Gutter protection systems that help keep leaves and debris out.",
      "Finish the look of a new roof with clean, matching lines."]),
    ("What we install", ["New gutters sized and pitched to drain properly.",
      "New downspouts placed where they make sense for your home.",
@@ -227,7 +229,9 @@ BUSINESS = {
               "addressRegion": "TN", "postalCode": "37122", "addressCountry": "US"},
   "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "94"},
   "areaServed": [{"@type": "AdministrativeArea", "name": c["name"] + ", TN"} for c in COUNTIES],
-  "sameAs": [FB, OC],
+  "foundingDate": "2015",
+  "founder": {"@type": "Person", "name": "Charles Allmon"},
+  "sameAs": [FB, OC, BBB],
 }
 
 def crumbs(R, items):
@@ -376,6 +380,8 @@ GENERAL_FAQS = [
  ("Can you install gutters with my new roof?", "Yes. Many customers have new gutters and downspouts installed together with their roof so the whole exterior is done at once."),
  ("Can you help with an insurance claim?", "We can provide the documentation and details you need for a claim. Call us to talk through your situation."),
  ("Do you do work other than roofing?", "Yes. Jonesall Inc. Roofing & Construction also handles additions, remodels and exterior construction. Roofing is our main focus."),
+ ("How long has Jonesall been in business?", "Jonesall Inc. was incorporated in 2015 and has served homeowners in Mt. Juliet and Middle Tennessee for more than ten years. We are BBB accredited with an A+ rating."),
+ ("Do you repair hail damage?", "Yes. Hail and storm damage repair is part of our roof repair work. We will inspect the roof, explain what we find and give you a written quote."),
  ("Are you local?", "Yes. We are based at 2001 Lynnhaven Ct in Mt. Juliet, Tennessee, and have deep ties to the community."),
 ]
 
@@ -389,7 +395,7 @@ about = f"""<section><div class="wrap two">
   <div class="prose">
     <div class="blk"><h2>Roofing done with real craftsmanship</h2>
     <p>Jonesall Inc. Roofing &amp; Construction is a locally owned roofing contractor based in Mt. Juliet, Tennessee. We hold ourselves to the highest level of roofing craftsmanship, and the only trace we leave behind is an elegant-looking home.</p>
-    <p>Our customers say it best: a crew that is cordial and professional, a price with no hidden fees, a roof finished in one day, and a clean yard when we are done. Charles, who customers deal with directly, is known for responding quickly, explaining everything clearly and making sure you are completely satisfied.</p></div>
+    <p>Our customers say it best: a crew that is cordial and professional, a price with no hidden fees, a roof finished in one day, and a clean yard when we are done. Owner Charles Allmon is who customers deal with directly, and he is known for responding quickly, explaining everything clearly and making sure you are completely satisfied.</p></div>
     <div class="blk"><h2>What we do</h2><ul class="tick">
       <li><a href="{R_}services/roof-replacement/">Roof replacement</a> with a full tear-off and clean install</li>
       <li><a href="{R_}services/roof-repair/">Roof repair and leak repair</a> that fixes the real cause</li>
@@ -398,7 +404,7 @@ about = f"""<section><div class="wrap two">
     <div class="blk"><h2>Where we work</h2>
     <p>We serve Wilson County and every county that touches it. See the <a href="{R_}service-areas/">full list of service areas</a>.</p></div>
     <div class="blk"><h2>Trusted and reviewed</h2>
-    <p>We hold a 5.0 rating on 94 Google reviews and are listed in Owens Corning's contractor directory. You can <a href="{OC}" target="_blank" rel="noopener">view our Owens Corning contractor profile</a> or follow us on <a href="{FB}" target="_blank" rel="noopener">Facebook</a>.</p></div>
+    <p>Jonesall Inc. was incorporated in 2015 and has served Middle Tennessee for more than ten years. We hold a 5.0 rating on 94 Google reviews, an A+ rating with the <a href="{BBB}" target="_blank" rel="noopener">Better Business Bureau</a> (accredited since 2018), and are listed in Owens Corning's contractor directory. You can <a href="{OC}" target="_blank" rel="noopener">view our Owens Corning contractor profile</a> or follow us on <a href="{FB}" target="_blank" rel="noopener">Facebook</a>.</p></div>
   </div>
   <aside><img class="side" src="{R_}images/hero-home.jpg" alt="Stone and brick home with a new roof installed by Jonesall Inc." loading="lazy">
   <div class="callbox"><b>Talk to Jonesall</b><p>Free estimate, clear written quote, no pressure.</p><a class="btn btn-blue" href="#contact">Request a quote</a><a class="tel" href="tel:{PHONE_RAW}">{PHONE}</a></div></aside>
