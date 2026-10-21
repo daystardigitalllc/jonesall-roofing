@@ -133,7 +133,6 @@ def nav(R):
     </div>
   </div>
   <a href="{R}#work">Our Work</a>
-  <a href="{R}#reviews">Reviews</a>
   <a href="{R}about/">About</a>
   <a href="{R}faq/">FAQ</a>
   <a href="{R}contact/">Contact</a>
