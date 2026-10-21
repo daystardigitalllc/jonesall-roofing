@@ -132,15 +132,12 @@ def nav(R):
   </div>
   <a href="{R}#work">Our Work</a>
   <a href="{R}#reviews">Reviews</a>
+  <a class="nav-phone" href="tel:{PHONE_RAW}">{PHONE}</a>
   <a class="btn btn-blue nav-cta" href="#contact">Free Estimate</a>
 </nav>'''
 
 def header(R):
-    return f'''<div class="topbar"><div class="wrap">
-  <span>Serving Wilson County &amp; 7 neighboring Middle Tennessee counties</span>
-  <a href="tel:{PHONE_RAW}">Call {PHONE}</a>
-</div></div>
-<header class="site"><div class="wrap">
+    return f'''<header class="site"><div class="wrap">
   <a class="brand" href="{R or './'}" aria-label="Jonesall Inc. Roofing &amp; Construction home"><img src="{R}images/logo.png" alt="Jonesall Inc. Roofing &amp; Construction logo"></a>
   <button class="burger" aria-label="Menu" aria-controls="mainnav" aria-expanded="false"><span></span><span></span><span></span></button>
   {nav(R)}
