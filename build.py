@@ -11,57 +11,7 @@ FB = "https://www.facebook.com/jonesallinc/"
 
 # ---------------------------------------------------------------- content
 SERVICES = [
- dict(slug="shingle-roofing", group="Roof Types", nav="Shingle Roofing", title="Shingle Roofing",
-  h1="Shingle roofing in Mt. Juliet, TN", img="fb-3.jpg",
-  meta="Asphalt shingle roof installation and replacement in Mt. Juliet and Middle Tennessee. Architectural shingles, clean one-day installs, straight quotes. Call (615) 485-0213.",
-  lead="Asphalt shingles are the most common roof on Middle Tennessee homes for good reason: they look great, handle our weather, and give you the best value per dollar. We install them the right way, start to finish.",
-  blocks=[
-   ("Why homeowners choose shingles", ["Architectural (dimensional) shingles add depth and a custom look to any brick, stone or siding home.",
-     "A wide range of colors, so the roof can match or refresh the whole exterior.",
-     "Strong value: lower upfront cost than metal, with a proven track record in Tennessee heat, storms and hail.",
-     "Easy to repair down the road if a few shingles are ever damaged."]),
-   ("How we install a shingle roof", ["Full tear-off of the old roofing down to the decking.",
-     "Inspect and repair any damaged decking before anything new goes on.",
-     "Install underlayment, drip edge, flashing and proper ventilation, not just shingles.",
-     "Nail every shingle to manufacturer specs so the roof performs for years.",
-     "Magnet-sweep the yard and haul away all debris. Most roofs are finished in a single day."]),
-  ],
-  faqs=[("How long does a shingle roof last?","Quality architectural shingles commonly last around 20 to 30 years, depending on ventilation, roof pitch, sun exposure and installation quality. A proper install matters as much as the shingle itself."),
-        ("How long does a replacement take?","Most homes are completed in one day, weather permitting. Larger or more complex roofs may take longer, and we will tell you up front."),
-        ("Do you do free estimates?","Yes. Call (615) 485-0213 or use the form on this page and we will give you a clear written quote with no pressure.")]),
- dict(slug="metal-roofing", group="Roof Types", nav="Metal Roofing", title="Metal Roofing",
-  h1="Metal roofing in Mt. Juliet, TN", img="fb-7.jpg",
-  meta="Metal roof installation in Mt. Juliet and Middle Tennessee. Long-lasting, low-maintenance metal roofing for homes, porches and additions. Call Jonesall for a free estimate.",
-  lead="A metal roof is a long-term investment. It is durable, low-maintenance and has a clean, modern look, which makes it a strong choice if you plan to stay in your home for years.",
-  blocks=[
-   ("Why choose a metal roof", ["Longevity: metal roofs commonly outlast asphalt shingles by decades.",
-     "Low maintenance: no shingle granules, curling or lifting.",
-     "Energy-conscious: reflective finishes can help reduce heat gain in summer.",
-     "Great for accents: standing seam metal on porches, dormers and additions looks sharp against shingles or brick."]),
-   ("Metal roofing options", ["Standing seam panels with concealed fasteners for a clean, premium finish.",
-     "Exposed-fastener panels for barns, sheds, outbuildings and budget-friendly projects.",
-     "Metal accent roofs over porches, bay windows and entryways."]),
-   ("Done right the first time", ["Metal is unforgiving of shortcuts. Flashing, panel layout, fasteners and sealing details all matter, and we take the time to get them right.",
-     "Ask for a written quote and we will walk you through the panel type, color and warranty before any work begins."]),
-  ],
-  faqs=[("Is a metal roof more expensive than shingles?","Metal costs more upfront than asphalt shingles, but it typically lasts much longer and needs less maintenance. We will quote both so you can compare."),
-        ("Is metal roofing loud in the rain?","With solid decking and underlayment, a properly installed metal roof is not noticeably louder than any other roof."),
-        ("Can you add a metal roof over a porch or addition?","Yes. Metal accent roofs are a popular upgrade, and we can quote them on their own or as part of a bigger project.")]),
- dict(slug="flat-roofing", group="Roof Types", nav="Flat & Low-Slope Roofing", title="Flat & Low-Slope Roofing",
-  h1="Flat and low-slope roofing in Mt. Juliet, TN", img="fb-5.jpg",
-  meta="Flat and low-slope roof installation and repair in Mt. Juliet and Middle Tennessee for porches, additions, garages and commercial buildings. Call (615) 485-0213.",
-  lead="Flat and low-slope sections need a different roofing system than a typical pitched roof. We help with porches, additions, garages and small commercial buildings where shingles are not the right answer.",
-  blocks=[
-   ("Where flat roofing is used", ["Additions and room extensions with a low pitch.",
-     "Porches, carports and garage tie-ins.",
-     "Small commercial and mixed-use buildings."]),
-   ("What matters on a low-slope roof", ["Drainage: water has to leave the roof quickly, or it will find a way in.",
-     "Seams and flashing: these are where nearly all flat roof leaks start.",
-     "The right membrane for the building, quoted clearly before work begins."]),
-  ],
-  faqs=[("Can you replace just the flat section of my roof?","Yes. Many homes have a single low-slope section next to a pitched roof, and we can replace or repair only that part."),
-        ("Why does my flat roof keep leaking?","Ponding water, failed seams and worn flashing are the usual causes. We inspect and tell you honestly whether it needs a repair or a replacement.")]),
- dict(slug="roof-replacement", group="Services", nav="Roof Replacement", title="Roof Replacement",
+  dict(slug="roof-replacement", group="Services", nav="Roof Replacement", title="Roof Replacement",
   h1="Roof replacement in Mt. Juliet, TN", img="ranch-roof.jpg",
   meta="Full roof replacement in Mt. Juliet, TN by Jonesall Inc. Clear written quotes, no hidden fees, one-day installs and 5.0 stars on 94 Google reviews.",
   lead="A new roof is a big decision. We make it simple: an honest inspection, a clear written quote, a crew that shows up, and a clean yard when the job is done.",
@@ -156,9 +106,6 @@ def read(p):
     return open(os.path.join(ROOT, p), encoding="utf8").read()
 
 ICON = {
- "shingle-roofing": '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>',
- "metal-roofing": '<path d="M3 20L9 6l3 6 3-6 6 14z"/>',
- "flat-roofing": '<rect x="3" y="9" width="18" height="6" rx="1"/><path d="M6 15v4M18 15v4"/>',
  "roof-replacement": '<path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/>',
  "roof-repair": '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/>',
  "gutters": '<path d="M4 8h16v3H4z"/><path d="M18 11v7"/><path d="M18 18h-2"/>',
@@ -170,14 +117,11 @@ def icon(slug):
 def nav(R):
     def links(items, key):
         return "".join(f'<a href="{R}{i["path"]}">{E(i["nav"] if "nav" in i else i["name"])}</a>' for i in items)
-    roof_types = [s for s in SERVICES if s["group"] == "Roof Types"]
-    other = [s for s in SERVICES if s["group"] == "Services"]
     return f'''<nav class="main" id="mainnav" aria-label="Main">
   <div class="dd">
     <button class="dd-btn" aria-expanded="false" aria-haspopup="true">Services <span class="car">▾</span></button>
     <div class="dd-menu">
-      <div class="dd-label">Roof Types</div>{links(roof_types,"s")}
-      <div class="dd-label">More Services</div>{links(other,"s")}
+      {links(SERVICES,"s")}
     </div>
   </div>
   <div class="dd">
@@ -299,16 +243,9 @@ def review_cards(n=3):
     return '<div class="rv-grid">' + "".join(
         f'<div class="rv"><div class="stars">★★★★★</div><p>{E(t)}</p><div class="who">{E(a)}<small>Google review</small></div></div>' for a, t in REVIEWS[:n]) + '</div>'
 
-import sys
-sys.path.insert(0, os.path.join(ROOT, "parts"))
-import local_content as LC
-ROOF_TYPES = [s for s in SERVICES if s["group"] == "Roof Types"]
-def sc_path(s, c):
-    return f'{s["path"]}{c["slug"]}/'
-
-def county_chips(R, current=None, label="{c}", svc=None):
+def county_chips(R, current=None, label="{c}"):
     return '<div class="chips">' + "".join(
-        f'<a href="{R}{sc_path(svc, c) if svc else c["path"]}"{" class=cur" if c["slug"]==current else ""}>{E(label.format(c=c["name"]))}</a>' for c in COUNTIES) + '</div>'
+        f'<a href="{R}{c["path"]}"{" class=cur" if c["slug"]==current else ""}>{E(label.format(c=c["name"]))}</a>' for c in COUNTIES) + '</div>'
 
 _MAP = json.load(open(os.path.join(ROOT, "parts", "tn_county_map.json")))
 def county_map(R, current=None):
@@ -350,20 +287,18 @@ home = home.replace("{{SERVICE_CARDS}}", service_cards("")).replace("{{AREAS_SEC
 hero_end = home.find("</section>") + len("</section>")
 home_body = home
 pages["index.html"] = page("", "", "Mt. Juliet Roofing Company | Jonesall Inc. Roofing & Construction",
-    "Jonesall Inc. is a Mt. Juliet, TN roofing contractor serving Wilson County and neighboring counties: shingle, metal and flat roofing, repairs and gutters. 5.0 stars on 94 Google reviews. Call (615) 485-0213.",
+    "Jonesall Inc. is a Mt. Juliet, TN roofing contractor serving Wilson County and neighboring counties: roof replacement, roof repair, gutters and construction. 5.0 stars on 94 Google reviews. Call (615) 485-0213.",
     home_body, [BUSINESS])
 
 # services hub
 def services_hub():
     R = "../"
     body = crumbs(R, [("Services", None)]) + phero("Roofing services in Mt. Juliet and Middle Tennessee",
-        "Every roof type and the services that go with it, from one local crew.", "ranch-roof.jpg", R, "Services") + f'''
-<section><div class="wrap"><div class="head"><div class="eyebrow">Roof Types</div><h2>Choose your roof type</h2></div>
-{service_cards(R,[s for s in SERVICES if s["group"]=="Roof Types"])}</div></section>
-<section class="reviews"><div class="wrap"><div class="head"><div class="eyebrow">More Services</div><h2>Replacement, repair, gutters and more</h2></div>
-{service_cards(R,[s for s in SERVICES if s["group"]=="Services"])}</div></section>'''
+        "Roof replacement, repair, gutters and construction from one local crew.", "ranch-roof.jpg", R, "Services") + f'''
+<section><div class="wrap"><div class="head"><div class="eyebrow">Services</div><h2>Replacement, repair, gutters and more</h2></div>
+{service_cards(R)}</div></section>'''
     return page(R, "services/", "Roofing Services | Jonesall Inc. Mt. Juliet, TN",
-        "Shingle, metal and flat roofing plus roof replacement, repair, gutters and construction from Jonesall Inc. in Mt. Juliet, TN.", body, [BUSINESS])
+        "Roof replacement, roof repair, gutters and construction from Jonesall Inc. in Mt. Juliet, TN.", body, [BUSINESS])
 pages["services/index.html"] = services_hub()
 
 # service pages
@@ -386,7 +321,7 @@ for s in SERVICES:
 </div></section>
 <section class="reviews"><div class="wrap"><div class="head"><div class="eyebrow">What neighbors say</div><h2>5.0 stars on 94 Google reviews</h2></div>{review_cards()}</div></section>
 <section><div class="wrap narrow"><div class="head"><div class="eyebrow">FAQ</div><h2>Common questions</h2></div><div class="faq">{faq}</div></div></section>
-<section class="areas-home"><div class="wrap"><div class="head"><div class="eyebrow">Where we work</div><h2>{E(s["title"])} across Wilson County and neighbors</h2></div>{county_map(R)}{county_chips(R, label=s["title"]+" in {c}", svc=s if s in ROOF_TYPES else None)}
+<section class="areas-home"><div class="wrap"><div class="head"><div class="eyebrow">Where we work</div><h2>{E(s["title"])} across Wilson County and neighbors</h2></div>{county_map(R)}{county_chips(R, label=s["title"]+" in {c}")}
 <div class="head" style="margin-top:44px"><div class="eyebrow">Related services</div></div>{service_cards(R, others[:3])}</div></section>'''
     pages[s["path"] + "index.html"] = page(R, s["path"], f'{s["title"]} Mt. Juliet, TN | Jonesall Inc.', s["meta"], body, schema, s["img"])
 
@@ -411,59 +346,18 @@ for c in COUNTIES:
 <section><div class="wrap two">
   <div class="prose">
     <div class="blk"><h2>Roofing services in {E(c["name"])}</h2>
-    <p>Jonesall Inc. Roofing &amp; Construction provides shingle, metal and flat roofing, roof replacement, repairs and gutters to homeowners in {E(c["name"])}. You get a clear written quote, a crew that does what it said it would, and a clean yard when we are done.</p></div>
+    <p>Jonesall Inc. Roofing &amp; Construction provides roof replacement, roof repair, gutters and construction to homeowners in {E(c["name"])}. You get a clear written quote, a crew that does what it said it would, and a clean yard when we are done.</p></div>
     <div class="blk"><h2>Communities we serve in {E(c["name"])}</h2><ul class="tick two-col">{towns}</ul>
     <p class="fine">Do not see your town? Call {PHONE}. If you are nearby, we will almost certainly make it out.</p></div>
   </div>
   <aside><div class="callbox"><b>Free estimate in {E(c["name"])}</b><p>Call or send a request and we will schedule a time to look at your roof.</p><a class="btn btn-blue" href="#contact">Request a quote</a><a class="tel" href="tel:{PHONE_RAW}">{PHONE}</a></div></aside>
 </div></section>
 <section class="reviews"><div class="wrap"><div class="head"><div class="eyebrow">Services</div><h2>What we do for {E(c["name"])} homeowners</h2></div>{service_cards(R)}
-<div class="chips" style="margin-top:30px">{"".join(f'<a href="{R}{sc_path(x, c) if x in ROOF_TYPES else x["path"]}">{E(x["title"])} in {E(c["name"])}</a>' for x in SERVICES)}</div></div></section>
+<div class="chips" style="margin-top:30px">{"".join(f'<a href="{R}{x["path"]}">{E(x["title"])} in {E(c["name"])}</a>' for x in SERVICES)}</div></div></section>
 <section><div class="wrap"><div class="head"><div class="eyebrow">What neighbors say</div><h2>5.0 stars on 94 Google reviews</h2></div>{review_cards()}</div></section>
 <section class="areas-home"><div class="wrap"><div class="head"><div class="eyebrow">Other areas</div><h2>We also serve nearby counties</h2></div>{county_map(R, c["slug"])}</div></section>'''
     pages[c["path"] + "index.html"] = page(R, c["path"], f'Roofing in {c["name"]}, TN | Jonesall Inc.',
-        f'Roof replacement, repair, shingle, metal and flat roofing in {c["name"]}, Tennessee. Call Jonesall Inc. at {PHONE} for a free estimate.', body, schema)
-
-# service x county pages (roof types only)
-for s in ROOF_TYPES:
-    for c in COUNTIES:
-        R = "../../../"
-        path = sc_path(s, c)
-        ctx = LC.CONTEXT[c["slug"]]
-        angle = LC.ANGLE[(s["slug"], c["slug"])]
-        towns = c["towns"]
-        faqs = LC.faq_for(s["title"], s["slug"], c["name"], towns)
-        faq = "".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in faqs)
-        h1 = f'{s["title"]} in {c["name"]}, TN'
-        lead = f'{s["title"]} for homeowners in {", ".join(towns[:3])} and across {c["name"]}. Clear written quotes, honest advice and a crew that does what it said it would.'
-        process = "".join(f"<li>{E(i)}</li>" for i in s["blocks"][1][1]) if len(s["blocks"]) > 1 else ""
-        sibs = [x for x in ROOF_TYPES if x is not s]
-        sib_chips = "".join(f'<a href="{R}{sc_path(x, c)}">{E(x["title"])} in {E(c["name"])}</a>' for x in sibs) + \
-            f'<a href="{R}services/roof-replacement/">Roof Replacement</a><a href="{R}services/roof-repair/">Roof Repair</a><a href="{R}services/gutters/">Gutters</a>'
-        near = county_chips(R, current=c["slug"], label=s["title"] + " in {c}", svc=s)
-        schema = [dict(BUSINESS, areaServed={"@type": "AdministrativeArea", "name": c["name"] + ", TN"}),
-          {"@context":"https://schema.org","@type":"Service","name":h1,"serviceType":s["title"],
-           "provider":{"@type":"RoofingContractor","name":"Jonesall Inc. Roofing & Construction"},
-           "areaServed":{"@type":"AdministrativeArea","name":c["name"]+", TN"}},
-          {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faqs]}]
-        body = crumbs(R, [("Services", R + "services/"), (s["title"], R + s["path"]), (c["name"], None)]) + phero(h1, lead, s["img"], R, c["name"]) + f'''
-<section><div class="wrap two">
-  <div class="prose">
-    <div class="blk"><h2>{E(s["title"])} for {E(c["name"])} homeowners</h2><p>{E(ctx)}</p><p>{E(angle)}</p></div>
-    <div class="blk"><h2>{E(s["blocks"][1][0])}</h2><ul class="tick">{process}</ul></div>
-    <div class="blk"><h2>Towns we serve in {E(c["name"])}</h2><ul class="tick two-col">{"".join(f"<li>{E(t)}</li>" for t in towns)}</ul>
-    <p>Read more about <a href="{R}{s["path"]}">{E(s["title"].lower())} in general</a> or see everything we do across <a href="{R}{c["path"]}">{E(c["name"])}</a>.</p></div>
-  </div>
-  <aside><img class="side" src="{R}images/{s["img"]}" alt="{E(s["title"])} in {E(c["name"])}, TN by Jonesall Inc." loading="lazy">
-  <div class="callbox"><b>Free estimate in {E(c["name"])}</b><p>Clear written quote, no hidden fees, no pressure.</p><a class="btn btn-blue" href="#contact">Request a quote</a><a class="tel" href="tel:{PHONE_RAW}">{PHONE}</a></div></aside>
-</div></section>
-<section class="reviews"><div class="wrap"><div class="head"><div class="eyebrow">What neighbors say</div><h2>5.0 stars on 94 Google reviews</h2></div>{review_cards()}</div></section>
-<section><div class="wrap narrow"><div class="head"><div class="eyebrow">FAQ</div><h2>{E(s["title"])} in {E(c["name"])}: common questions</h2></div><div class="faq">{faq}</div></div></section>
-<section class="areas-home"><div class="wrap">
-<div class="head"><div class="eyebrow">Also in {E(c["name"])}</div><h2>More from Jonesall</h2></div><div class="chips">{sib_chips}</div>
-<div class="head" style="margin-top:44px"><div class="eyebrow">Nearby counties</div><h2>{E(s["title"])} across Wilson County and neighbors</h2></div>{near}</div></section>'''
-        pages[path + "index.html"] = page(R, path, f'{s["title"]} in {c["name"]}, TN | Jonesall Inc.',
-            f'{s["title"]} in {c["name"]}, Tennessee: {", ".join(towns[:3])} and nearby. Free estimates from Jonesall Inc. Call {PHONE}.', body, schema, s["img"])
+        f'Roof replacement, repair and gutters in {c["name"]}, Tennessee. Call Jonesall Inc. at {PHONE} for a free estimate.', body, schema)
 
 # ---------------------------------------------------------------- write
 for old in ("services", "service-areas"):

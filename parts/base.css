@@ -22,8 +22,8 @@ h1,h2,h3{font-family:'Barlow Condensed',sans-serif;line-height:1.05;text-transfo
 .topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
 .topbar a{text-decoration:none;font-weight:600;color:#fff}
 header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
-.brand img{height:62px;width:auto;mix-blend-mode:multiply}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:104px}
+.brand img{height:84px;width:auto;mix-blend-mode:multiply}
 nav.main{display:flex;gap:26px;align-items:center}
 nav.main a{text-decoration:none;font-weight:600;font-size:.98rem}
 nav.main a:hover{color:var(--blue)}
@@ -42,7 +42,11 @@ nav.main a:hover{color:var(--blue)}
 
 /* trust */
 .trust{background:var(--blue);color:#fff}
-.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:22px;padding-bottom:22px;text-align:center}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:20px;padding-bottom:20px;text-align:center;align-items:center}
+.trust .tg{display:flex;align-items:center;justify-content:center;gap:12px;text-align:left}
+.gicon{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;opacity:1!important}
+.ocbadge{display:inline-block;background:#fff;border-radius:10px;padding:8px 14px}
+.ocbadge img{height:48px;width:auto}
 .trust b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;text-transform:uppercase;letter-spacing:.02em}
 .trust span{font-size:.92rem;opacity:.9}
 

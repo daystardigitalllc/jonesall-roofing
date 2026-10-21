@@ -65,7 +65,7 @@ footer a:hover{text-decoration:underline}
 
 @media(max-width:900px){
   .burger{display:flex}
-  nav.main{display:none!important;position:absolute;top:78px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px;max-height:calc(100vh - 78px);overflow:auto;box-shadow:0 20px 30px rgba(0,0,0,.12)}
+  nav.main{display:none!important;position:absolute;top:84px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px;max-height:calc(100vh - 84px);overflow:auto;box-shadow:0 20px 30px rgba(0,0,0,.12)}
   nav.main.open{display:flex!important}
   nav.main a:not(.nav-cta){display:block!important;padding:12px 0;border-bottom:1px solid var(--line)}
   .dd-btn{width:100%;text-align:left;padding:12px 0;border-bottom:1px solid var(--line)}
@@ -81,3 +81,5 @@ footer a:hover{text-decoration:underline}
   .phero .wrap{padding-top:52px;padding-bottom:56px}
 }
 @media(max-width:560px){.services.four{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr}}
+
+@media(max-width:900px){header.site .wrap{height:84px}.brand img{height:70px}}
