@@ -221,10 +221,10 @@ footer a:hover{text-decoration:underline}
   .services.four{grid-template-columns:1fr 1fr}
   .callbox{position:static}
   .tick.two-col{grid-template-columns:1fr}
-  .fgrid{grid-template-columns:1fr 1fr}
+  footer .fgrid{grid-template-columns:1fr 1fr}
   .phero .wrap{padding-top:52px;padding-bottom:56px}
 }
-@media(max-width:560px){.services.four{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr}}
+@media(max-width:560px){.services.four{grid-template-columns:1fr}footer .fgrid{grid-template-columns:1fr}}
 
 @media(max-width:900px){header.site .wrap{height:84px}.brand img{height:70px}.hero{min-height:calc(100vh - 84px);min-height:calc(100svh - 84px)}}
 
@@ -265,3 +265,33 @@ body.home header.site:not(.solid) .burger span{background:#fff}
 }
 @media(max-width:900px){body.home:not(.scrolled) .mobile-call{display:none}body.home:not(.scrolled) footer{padding-bottom:34px}}
 @media(min-width:901px) and (max-width:1120px){nav.main{gap:14px}nav.main a,.dd-btn{font-size:.92rem}.nav-cta{padding:9px 14px}}
+
+/* ---- mobile: full-width layout ---- */
+@media(max-width:700px){
+  html,body{overflow-x:hidden}
+  .wrap{max-width:none;width:100%;padding-left:16px;padding-right:16px}
+  .hero .cta,.phero .cta{flex-direction:column;align-items:stretch}
+  .hero .cta .btn,.phero .cta .btn,.callbox .btn,form .btn{width:100%}
+  .head{max-width:none}
+  .narrow{max-width:none}
+  .card{padding:22px}
+  .rv{padding:22px}
+  form{padding:22px;border-radius:12px}
+  .callbox{padding:22px}
+  .tnmap{border-radius:12px;padding:6px}
+  .maplist li span{display:none}
+  .chips a{flex:1 1 auto;text-align:center}
+  .gallery{grid-template-columns:1fr;gap:12px}
+  .gallery figure,.gallery figure.wide{grid-column:auto;aspect-ratio:4/3}
+  .cons .imgs{grid-template-columns:1fr}
+  .cons .imgs img:first-child{grid-column:auto}
+  .split img{aspect-ratio:4/3}
+  .score .n{font-size:3.4rem}
+  .phero h1{font-size:2.3rem}
+  section{padding:48px 0}
+  .faq details{padding:14px 16px}
+  .callbox .tel,.big-phone{font-size:1.9rem}
+  .dark .btn,.cons .btn{width:100%}
+  .maplist ul{grid-template-columns:1fr 1fr;gap:8px}
+  .maplist a{padding:11px 12px;font-size:.92rem}
+}
