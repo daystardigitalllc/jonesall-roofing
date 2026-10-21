@@ -19,9 +19,9 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Construction", "provider": {"@type": "RoofingContractor", "name": "Jonesall Inc. Roofing & Construction"}, "areaServed": ["Wilson County, TN", "Davidson County, TN", "Rutherford County, TN", "Sumner County, TN", "Smith County, TN", "Trousdale County, TN", "DeKalb County, TN", "Cannon County, TN"], "description": "Home additions, remodels and exterior construction in Mt. Juliet and Middle Tennessee from Jonesall Inc. Roofing & Construction. Call (615) 485-0213."}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you build additions from the ground up?", "acceptedAnswer": {"@type": "Answer", "text": "Call us with your project and we will talk through what is involved and give you a clear quote."}}]}</script>
 </head>
-<body>
+<body class="">
 <header class="site"><div class="wrap">
-  <a class="brand" href="../../" aria-label="Jonesall Inc. Roofing &amp; Construction home"><img src="../../images/logo.png" alt="Jonesall Inc. Roofing &amp; Construction logo"></a>
+  <a class="brand" href="../../" aria-label="Jonesall Inc. Roofing &amp; Construction home"><img class="logo-dark" src="../../images/logo.png" alt="Jonesall Inc. Roofing &amp; Construction logo"></a>
   <button class="burger" aria-label="Menu" aria-controls="mainnav" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="main" id="mainnav" aria-label="Main">
   <div class="dd">
@@ -108,8 +108,11 @@
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
 (function(){
+ var hd=document.querySelector('header.site');
+ var upd=function(){document.body.classList.toggle('scrolled',window.scrollY>20);hd.classList.toggle('solid',window.scrollY>20||document.getElementById('mainnav').classList.contains('open'))};
+ window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
  var b=document.querySelector('.burger'),n=document.getElementById('mainnav');
- b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+ b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);upd()});
  document.querySelectorAll('.dd-btn').forEach(function(btn){
   btn.addEventListener('click',function(e){
    var dd=btn.parentNode,open=dd.classList.contains('open');
@@ -125,7 +128,7 @@ document.getElementById('yr').textContent=new Date().getFullYear();
   el.addEventListener('mouseenter',function(){f(true)});el.addEventListener('mouseleave',function(){f(false)});
   el.addEventListener('focus',function(){f(true)});el.addEventListener('blur',function(){f(false)});
  });
- n.addEventListener('click',function(e){if(e.target.tagName==='A'&&!e.target.closest('.dd-menu'))n.classList.remove('open')});
+ n.addEventListener('click',function(e){if(e.target.tagName==='A'&&!e.target.closest('.dd-menu'))n.classList.remove('open');upd()});
 })();
 </script>
 </body>

@@ -17,9 +17,9 @@
 <link rel="stylesheet" href="../../styles.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "RoofingContractor", "name": "Jonesall Inc. Roofing & Construction", "url": "https://www.roofingmountjuliet.com/", "telephone": "+1-615-485-0213", "email": "jonesall@tds.net", "image": "https://www.roofingmountjuliet.com/images/ranch-roof.jpg", "address": {"@type": "PostalAddress", "streetAddress": "2001 Lynnhaven Ct", "addressLocality": "Mt. Juliet", "addressRegion": "TN", "postalCode": "37122", "addressCountry": "US"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "94"}, "areaServed": {"@type": "AdministrativeArea", "name": "Cannon County, TN"}, "sameAs": ["https://www.facebook.com/jonesallinc/", "https://www.owenscorning.com/en-us/roofing/contractors/contractor-profile/219346"]}</script>
 </head>
-<body>
+<body class="">
 <header class="site"><div class="wrap">
-  <a class="brand" href="../../" aria-label="Jonesall Inc. Roofing &amp; Construction home"><img src="../../images/logo.png" alt="Jonesall Inc. Roofing &amp; Construction logo"></a>
+  <a class="brand" href="../../" aria-label="Jonesall Inc. Roofing &amp; Construction home"><img class="logo-dark" src="../../images/logo.png" alt="Jonesall Inc. Roofing &amp; Construction logo"></a>
   <button class="burger" aria-label="Menu" aria-controls="mainnav" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="main" id="mainnav" aria-label="Main">
   <div class="dd">
@@ -110,8 +110,11 @@
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
 (function(){
+ var hd=document.querySelector('header.site');
+ var upd=function(){document.body.classList.toggle('scrolled',window.scrollY>20);hd.classList.toggle('solid',window.scrollY>20||document.getElementById('mainnav').classList.contains('open'))};
+ window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
  var b=document.querySelector('.burger'),n=document.getElementById('mainnav');
- b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+ b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);upd()});
  document.querySelectorAll('.dd-btn').forEach(function(btn){
   btn.addEventListener('click',function(e){
    var dd=btn.parentNode,open=dd.classList.contains('open');
@@ -127,7 +130,7 @@ document.getElementById('yr').textContent=new Date().getFullYear();
   el.addEventListener('mouseenter',function(){f(true)});el.addEventListener('mouseleave',function(){f(false)});
   el.addEventListener('focus',function(){f(true)});el.addEventListener('blur',function(){f(false)});
  });
- n.addEventListener('click',function(e){if(e.target.tagName==='A'&&!e.target.closest('.dd-menu'))n.classList.remove('open')});
+ n.addEventListener('click',function(e){if(e.target.tagName==='A'&&!e.target.closest('.dd-menu'))n.classList.remove('open');upd()});
 })();
 </script>
 </body>

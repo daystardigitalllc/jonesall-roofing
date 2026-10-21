@@ -136,9 +136,10 @@ def nav(R):
   <a class="btn btn-blue nav-cta" href="#contact">Free Estimate</a>
 </nav>'''
 
-def header(R):
+def header(R, light=False):
+    lg = f'<img class="logo-light" src="{R}images/logo-light.png" alt="" aria-hidden="true">' if light else ''
     return f'''<header class="site"><div class="wrap">
-  <a class="brand" href="{R or './'}" aria-label="Jonesall Inc. Roofing &amp; Construction home"><img src="{R}images/logo.png" alt="Jonesall Inc. Roofing &amp; Construction logo"></a>
+  <a class="brand" href="{R or './'}" aria-label="Jonesall Inc. Roofing &amp; Construction home">{lg}<img class="logo-dark" src="{R}images/logo.png" alt="Jonesall Inc. Roofing &amp; Construction logo"></a>
   <button class="burger" aria-label="Menu" aria-controls="mainnav" aria-expanded="false"><span></span><span></span><span></span></button>
   {nav(R)}
 </div></header>'''
@@ -158,8 +159,11 @@ def footer(R):
 SCRIPT = '''<script>
 document.getElementById('yr').textContent=new Date().getFullYear();
 (function(){
+ var hd=document.querySelector('header.site');
+ var upd=function(){document.body.classList.toggle('scrolled',window.scrollY>20);hd.classList.toggle('solid',window.scrollY>20||document.getElementById('mainnav').classList.contains('open'))};
+ window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
  var b=document.querySelector('.burger'),n=document.getElementById('mainnav');
- b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+ b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);upd()});
  document.querySelectorAll('.dd-btn').forEach(function(btn){
   btn.addEventListener('click',function(e){
    var dd=btn.parentNode,open=dd.classList.contains('open');
@@ -175,11 +179,11 @@ document.getElementById('yr').textContent=new Date().getFullYear();
   el.addEventListener('mouseenter',function(){f(true)});el.addEventListener('mouseleave',function(){f(false)});
   el.addEventListener('focus',function(){f(true)});el.addEventListener('blur',function(){f(false)});
  });
- n.addEventListener('click',function(e){if(e.target.tagName==='A'&&!e.target.closest('.dd-menu'))n.classList.remove('open')});
+ n.addEventListener('click',function(e){if(e.target.tagName==='A'&&!e.target.closest('.dd-menu'))n.classList.remove('open');upd()});
 })();
 </script>'''
 
-def page(R, path, title, desc, body, schema=None, hero_img=None):
+def page(R, path, title, desc, body, schema=None, hero_img=None, cls=""):
     ld = "".join(f'<script type="application/ld+json">{json.dumps(x)}</script>\n' for x in (schema or []))
     return f'''<!doctype html>
 <html lang="en">
@@ -199,8 +203,8 @@ def page(R, path, title, desc, body, schema=None, hero_img=None):
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{R}styles.css">
 {ld}</head>
-<body>
-{header(R)}
+<body class="{cls}">
+{header(R, light=(cls == 'home'))}
 <main id="top">
 {body}
 {read("parts/contact.html")}
@@ -285,7 +289,7 @@ hero_end = home.find("</section>") + len("</section>")
 home_body = home
 pages["index.html"] = page("", "", "Mt. Juliet Roofing Company | Jonesall Inc. Roofing & Construction",
     "Jonesall Inc. is a Mt. Juliet, TN roofing contractor serving Wilson County and neighboring counties: roof replacement, roof repair, gutters and construction. 5.0 stars on 94 Google reviews. Call (615) 485-0213.",
-    home_body, [BUSINESS])
+    home_body, [BUSINESS], cls="home")
 
 # services hub
 def services_hub():

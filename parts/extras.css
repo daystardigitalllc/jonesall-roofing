@@ -87,3 +87,36 @@ footer a:hover{text-decoration:underline}
 .nav-phone{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;text-decoration:none;color:var(--ink);letter-spacing:.02em}
 @media(max-width:1100px){.nav-phone{display:none}}
 @media(max-width:900px){nav.main .nav-phone{display:none!important}}
+
+/* ---- home: transparent header + first screen ---- */
+.logo-light{display:none;mix-blend-mode:normal!important}
+body.home header.site{position:fixed;top:0;left:0;right:0;background:transparent;border-bottom:1px solid transparent;transition:background .25s,border-color .25s,box-shadow .25s}
+body.home header.site::before{content:"";position:absolute;left:0;right:0;top:0;height:150px;background:linear-gradient(rgba(8,10,16,.72),rgba(8,10,16,0));pointer-events:none;transition:opacity .25s}
+body.home header.site .wrap{position:relative}
+body.home header.site.solid{background:#fff;border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(13,15,20,.08)}
+body.home header.site.solid::before{opacity:0}
+body.home header.site:not(.solid) .logo-light{display:block}
+body.home header.site:not(.solid) .logo-dark{display:none}
+body.home header.site:not(.solid) nav.main > a:not(.btn),
+body.home header.site:not(.solid) .dd-btn,
+body.home header.site:not(.solid) .nav-phone{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+body.home header.site:not(.solid) .dd-btn:hover,
+body.home header.site:not(.solid) nav.main > a:not(.btn):hover{color:#c3cffa}
+body.home header.site:not(.solid) .burger span{background:#fff}
+.dd-menu a{color:var(--ink)}
+.first{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
+.first .hero{flex:1;min-height:0}
+.first .hero .wrap{padding-top:150px;padding-bottom:56px}
+.first .trust{flex:none}
+@media(max-width:900px){
+  .first .hero .wrap{padding-top:120px;padding-bottom:36px}
+  body.home header.site .logo-light{height:70px}
+  .first .trust .wrap{grid-template-columns:1fr 1fr;padding-top:14px;padding-bottom:14px;gap:10px}
+  .first .trust .wrap > div:nth-child(2),.first .trust .wrap > div:nth-child(3){display:none}
+  .first .trust b{font-size:1.25rem}
+  .first .trust span{font-size:.82rem}
+  .ocbadge img{height:38px}
+  .gicon{width:40px;height:40px}.gicon svg{width:22px;height:22px}
+  nav.main a:not(.nav-cta),.dd-btn{color:var(--ink)!important;text-shadow:none!important}
+}
+@media(max-width:900px){body.home:not(.scrolled) .mobile-call{display:none}body.home:not(.scrolled) footer{padding-bottom:34px}}
